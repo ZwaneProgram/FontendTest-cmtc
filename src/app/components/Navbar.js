@@ -14,13 +14,13 @@ const Navbar = () => {
               <Link href="/" className="nav-link active" aria-current="page">Home</Link>
             </li>
             <li className="nav-item mx-4">
-              <Link href="/about" className="nav-link">About</Link>
+              <Link href="/About" className="nav-link">About</Link>
             </li>
             <li className="nav-item mx-4">
-              <Link href="/service" className="nav-link">Service</Link>
+              <Link href="/Service" className="nav-link">Service</Link>
             </li>
             <li className="nav-item mx-4">
-              <Link href="/contact" className="nav-link">Contact</Link>
+              <Link href="/Contact" className="nav-link">Contact</Link>
             </li>
           </ul>
           <div className="d-flex">
