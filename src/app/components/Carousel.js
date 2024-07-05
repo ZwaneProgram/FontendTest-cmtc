@@ -32,7 +32,7 @@ function TheCarousel() {
        {data.map((slide, i) => {
         return (
           <Carousel.Item>        
-        <img
+        <Image
           className="d-block w-100"
           src={slide.image}
           alt="slider image"
