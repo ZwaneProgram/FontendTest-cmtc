@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import Navbar from "./components/Navbar"
 import TheCarousel from "./components/Carousel" 
 import Card from './components/Card'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 
 import('bootstrap/dist/js/bootstrap.bundle.min.js');
 import 'bootstrap/dist/css/bootstrap.min.css';
