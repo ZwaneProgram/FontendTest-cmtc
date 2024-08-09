@@ -10,19 +10,28 @@ export default function Page() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const res = await fetch('http://backend-api-gules.vercel.app/api/users', {
-            method: 'POST',
-            headers: {
-                Accept : 'application/json',
-            },
-            body: JSON.stringify({ firstname, lastname, username, password }),
-        });
-
-        const result = await res.json();
-        console.log(result);
+    
+        try {
+            const res = await fetch('https://backend-api-gules.vercel.app/api/users', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ firstname, lastname, username, password }),
+            });
+    
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
+            }
+    
+            const result = await res.json();
+            console.log(result);
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
-
+    
     return (
         <>
             <br /><br /><br />
