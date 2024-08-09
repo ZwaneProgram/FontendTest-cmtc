@@ -16,7 +16,6 @@ export default function Page() {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
-                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ firstname, lastname, username, password }),
             });
