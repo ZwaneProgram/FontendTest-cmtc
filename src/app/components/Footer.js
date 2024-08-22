@@ -1,34 +1,52 @@
+import Link from 'next/link';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+
 const Footer = () => {
   return (
-    <footer className="bg-body-tertiary text-center text-lg-start">
+    <footer className="bg-dark text-white text-center text-lg-start">
       <div className="container p-4">
         <div className="row">
-          <div className="col-lg-6 col-md-12 mb-4 mb-md-0 ">
-            <h5 className="text-uppercase text-dark">Footer text</h5>
-            <p className="text-dark">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-              molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-              voluptatem veniam, est atque cumque eum delectus sint!
+          {/* About Section */}
+          <div className="col-lg-4 col-md-12 mb-4 mb-md-0">
+            <h5 className="text-uppercase">About Us</h5>
+            <p>
+              We are a passionate team dedicated to providing innovative solutions and services. Our mission is to exceed your expectations and deliver top-notch results.
             </p>
           </div>
-  
-          <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 className="text-uppercase text-dark">Footer text</h5>
-            <p className="text-dark">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-              molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-              voluptatem veniam, est atque cumque eum delectus sint!
+
+          {/* Links Section */}
+          <div className="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 className="text-uppercase">Quick Links</h5>
+            <ul className="list-unstyled">
+              <li><Link href="/About" className="text-white">About</Link></li>
+              <li><Link href="/Services" className="text-white">Services</Link></li>
+              <li><Link href="/Contact" className="text-white">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Contact Section */}
+          <div className="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 className="text-uppercase">Contact Us</h5>
+            <p>
+              123 Main Street,<br />
+              City, Country<br />
+              Email: info@example.com<br />
+              Phone: +123 456 7890
             </p>
           </div>
         </div>
       </div>
-  
-      <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-        <span className="text-dark">
-          © 2024 Phuwasit:
-          <a className="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </span>
+
+      {/* Social Media Section */}
+      <div className="bg-dark text-center p-3">
+        <div className="container">
+          <a href="#" className="text-white me-4"><FaFacebookF /></a>
+          <a href="#" className="text-white me-4"><FaTwitter /></a>
+          <a href="#" className="text-white me-4"><FaLinkedinIn /></a>
+          <a href="#" className="text-white"><FaInstagram /></a>
+        </div>
       </div>
+
     </footer>
   );
 };

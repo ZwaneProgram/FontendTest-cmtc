@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState } from "react";
 import Image from "next/image";
 import Carousel from 'react-bootstrap/Carousel';
@@ -15,7 +15,7 @@ const data = [
     description: "Description Here"
   },
   {
-    image: '/1.jpg',
+    image: '/Card1.jpg',
     caption: "Caption",
     description: "Description Here"
   }
@@ -31,13 +31,15 @@ function TheCarousel() {
     <Carousel activeIndex={index} onSelect={handleSelect}>
       {data.map((slide, i) => (
         <Carousel.Item key={i}>
-          <Image
-            className="d-block w-100"
-            src={slide.image}
-            alt="slider image"
-            width={1920}
-            height={1080}
-          />
+          <div style={{ position: 'relative', width: '100%', height: '500px' }}>
+            <Image
+              className="d-block w-100"
+              src={slide.image}
+              alt="slider image"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
           <Carousel.Caption>
             <h3>{slide.caption}</h3>
             <p>{slide.description}</p>
