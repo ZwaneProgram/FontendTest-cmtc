@@ -24,7 +24,7 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="d-flex">
-            <Link href="/Signup">
+            <Link href="/signup">
               <button className="btn btn-outline-primary me-2">SignUp</button>
             </Link>
             <Link href="/">
