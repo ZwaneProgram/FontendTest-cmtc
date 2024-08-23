@@ -1,7 +1,6 @@
 export default function Service() {
   return (
     <div className="container py-5">
-      {/* Hero Section */}
       <div className="row justify-content-center text-center mb-5">
         <div className="col-lg-8">
           <h1 className="display-4 text-primary mb-4">Our Services</h1>
@@ -11,7 +10,6 @@ export default function Service() {
         </div>
       </div>
 
-      {/* Services Section */}
       <div className="row text-center mb-5">
         <div className="col-md-4">
           <div className="card mb-4 shadow-sm">
@@ -48,10 +46,9 @@ export default function Service() {
         </div>
       </div>
 
-      {/* Call to Action */}
       <div className="row justify-content-center text-center">
         <div className="col-lg-8">
-          <h2 className="text-primary mb-4">Let's Work Together</h2>
+          <h2 className="text-primary mb-4">Let&#39;s Work Together</h2>
           <p className="lead text-muted">
             Reach out to us today and discover how we can help you succeed.
           </p>
@@ -59,7 +56,6 @@ export default function Service() {
         </div>
       </div>
 
-      {/* Footer */}
       <footer className="text-center mt-5">
         <p className="text-muted">&copy; 2024 Your Test Anuchat. All rights reserved.</p>
       </footer>

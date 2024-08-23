@@ -8,7 +8,7 @@ export default function Home() {
           <div className="card shadow-sm border-light">
             <div className="position-relative">
               <Image
-                src="/Card1.jpg" // Adjust path as needed
+                src="/Card1.jpg" 
                 alt="Card Image 1"
                 layout="responsive"
                 width={500}
@@ -43,7 +43,7 @@ export default function Home() {
               </div>
             </div>
             <div className="card-body">
-              <p className="card-text">Explore Card 2's features and benefits. Click the link to find out more about what we can offer you.</p>
+              <p className="card-text">Explore Card 2s features and benefits. Click the link to find out more about what we can offer you.</p>
               <a href="#" className="btn btn-primary">Learn More</a>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function Home() {
               </div>
             </div>
             <div className="card-body">
-              <p className="card-text">Card 3 offers outstanding features that you won't want to miss. Discover all the details here.</p>
+              <p className="card-text">Card 3 offers outstanding features that you wont want to miss. Discover all the details here.</p>
               <a href="#" className="btn btn-primary">Find Out More</a>
             </div>
           </div>

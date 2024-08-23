@@ -49,8 +49,8 @@ export default function About() {
           <h2 className="text-primary mb-4">What We Do</h2>
           <p className="text-muted">
             We specialize in providing cutting-edge solutions that span across
-            various industries. Whether it’s technology, design, or strategy,
-            we’ve got it covered.
+            various industries. Whether it&#39;s technology, design, or strategy,
+            we&#39;ve got it covered.
           </p>
         </div>
       </div>
@@ -105,8 +105,8 @@ export default function About() {
         <div className="col-md-4">
           <blockquote className="blockquote">
             <p className="mb-0">
-              "This company transformed our digital strategy. The team's
-              dedication and creativity made all the difference."
+              &quot;This company transformed our digital strategy. The team&#39;s
+              dedication and creativity made all the difference.&quot;
             </p>
             <footer className="fw-bold">- Client A</footer>
           </blockquote>
@@ -114,8 +114,8 @@ export default function About() {
         <div className="col-md-4">
           <blockquote className="blockquote">
             <p className="mb-0">
-              "Their attention to detail and focus on delivering high-quality
-              results impressed us."
+              &quot;Their attention to detail and focus on delivering high-quality
+              results impressed us.&quot;
             </p>
             <footer className="fw-bold">- Client B</footer>
           </blockquote>
@@ -123,8 +123,8 @@ export default function About() {
         <div className="col-md-4">
           <blockquote className="blockquote">
             <p className="mb-0">
-              "We couldn’t have asked for a better partnership in driving our
-              business forward."
+              &quot;We couldn&#39;t have asked for a better partnership in driving our
+              business forward.&quot;
             </p>
             <footer className="fw-bold">- Client C</footer>
           </blockquote>
