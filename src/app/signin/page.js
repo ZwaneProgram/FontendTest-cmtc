@@ -28,7 +28,7 @@ export default function SignIn() {
         localStorage.setItem('user', JSON.stringify(data.user));
         
         // Redirect to /users after successful login
-        router.push('/users');
+        window.location.reload();
       } else {
         setError(data.error || 'Login failed');
       }

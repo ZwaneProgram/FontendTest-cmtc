@@ -26,10 +26,14 @@ export default function Page() {
     
             const result = await res.json();
             console.log(result);
+    
+            // Refresh the page
+            window.location.reload();
         } catch (error) {
             console.error('Error:', error);
         }
     };
+    
 
     return (
         <div className="container py-5">

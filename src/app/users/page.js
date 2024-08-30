@@ -1,4 +1,3 @@
-// frontend/pages/users.js
 
 'use client';
 
