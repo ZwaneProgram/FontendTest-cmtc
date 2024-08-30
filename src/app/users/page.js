@@ -1,32 +1,17 @@
+// frontend/pages/users.js
+
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-export default function Page() {
+export default function UsersPage() {
     const [items, setItems] = useState([]);
-    const router = useRouter();
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
-        
-        // If there's no token, redirect to the signin page
-        if (!token) {
-            router.push('/signin');
-            return;
-        }
-
         async function getUsers() {
             try {
-                const res = await fetch('https://backend-lime-nine.vercel.app/api/users', {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${localStorage.getItem('token')}`
-                    },
-                });
-
+                const res = await fetch('https://backend-lime-nine.vercel.app/api/users');
                 if (!res.ok) {
                     console.error('Failed to fetch data');
                     return;
@@ -41,18 +26,13 @@ export default function Page() {
         getUsers();
         const interval = setInterval(getUsers, 1000);
         return () => clearInterval(interval);
-    }, [router]);
+    }, []);
 
     const handleDelete = async (id) => {
-        const token = localStorage.getItem('token');
-        
         if (confirm('Are you sure you want to delete this user?')) {
             try {
-                const res = await fetch(`/api/users/${id}`, {
+                const res = await fetch(`https://backend-lime-nine.vercel.app/api/users/${id}`, {
                     method: 'DELETE',
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                    }
                 });
 
                 if (res.ok) {
@@ -66,27 +46,27 @@ export default function Page() {
             }
         }
     };
-    
+
     return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center p-5">
-            <div className="w-full max-w-3xl bg-white shadow-lg rounded-lg p-6">
-                <h1 className="text-3xl font-bold text-center mb-6">Fetched Users</h1>
-                <ul className="space-y-4">
-                    {items.map((item, index) => (
-                        <li key={index} className="bg-blue-100 p-4 rounded-lg shadow-md flex items-center justify-between">
-                            <div className="ml-4">
-                                <p className="text-lg font-bold text-gray-700">ItemId: {item.id}</p>
-                                <p className="text-lg font-semibold text-gray-700">Username: {item.username}</p>
-                                <p className="text-gray-500">FirstName: {item.firstname}</p>
-                                <p className="text-gray-500">LastName: {item.lastname}</p>
+        <div className="container min-vh-100 d-flex align-items-center justify-content-center p-5">
+            <div className="w-100 max-w-3xl bg-white shadow-lg rounded p-4">
+                <h1 className="text-center mb-4">Fetched Users</h1>
+                <ul className="list-group">
+                    {items.map((item) => (
+                        <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 className="mb-1">ItemId: {item.id}</h5>
+                                <p className="mb-1"><strong>Username:</strong> {item.username}</p>
+                                <p className="mb-1"><strong>FirstName:</strong> {item.firstname}</p>
+                                <p><strong>LastName:</strong> {item.lastname}</p>
                             </div>
-                            <div className="flex space-x-2">
-                                <Link href={`/users/edit/${item.id}`} className="bg-yellow-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-yellow-600">
+                            <div className="btn-group">
+                                <Link href={`/users/edit/${item.id}`} className="btn btn-warning text-white">
                                     Edit
                                 </Link>
                                 <button
                                     onClick={() => handleDelete(item.id)}
-                                    className="bg-red-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-600"
+                                    className="btn btn-danger"
                                 >
                                     Delete
                                 </button>
