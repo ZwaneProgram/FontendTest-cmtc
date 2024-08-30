@@ -1,15 +1,17 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function SignIn() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const router = useRouter();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     try {
       const res = await fetch('https://backend-lime-nine.vercel.app/api/login', {
         method: 'POST',
@@ -18,16 +20,15 @@ export default function SignIn() {
         },
         body: JSON.stringify({ username, password }),
       });
-
+  
       const data = await res.json();
-
-      if (res.status === 200) {
-
+  
+      if (res.ok) {
         localStorage.setItem('token', data.token);
-
         localStorage.setItem('user', JSON.stringify(data.user));
-
-        window.location.reload();
+        
+        // Redirect to /users after successful login
+        router.push('/users');
       } else {
         setError(data.error || 'Login failed');
       }
